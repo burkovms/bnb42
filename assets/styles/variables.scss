@@ -1,0 +1,42 @@
+$media_xl: 1440px;
+$media_lg: 1199px;
+$media_md: 1024px;
+$media_sm: 767px;
+$media_xs: 575px;
+
+$colors: (
+  "white": #fff,
+  "black": #000,
+  "white-400": #ceced0,
+  "black-100": #101010,
+  "black-200": #1f1f20,
+  "black-300": #2a2a2b,
+  "black-400": #373739,
+  "black-600": #515254,
+  "grey-100": #5f5f62,
+  "grey-600": #a1a2a6,
+  "grey-800": #c0c0c2,
+  "sand-100": #e6a35c,
+  "sand-200": #e5c095,
+  "purple-100": #a27ad5,
+  "purple-200": #b995e6,
+  "green-100": #87d57a,
+  "bnb": #f3ba2f,
+  "card": (
+    "empty": (
+      "textColor1": #878787,
+      "textColor2": #7b644b,
+    ),
+  ),
+);
+
+$bg-gradient: (
+  "black": linear-gradient(180deg, #2b2b2b 0%, #202020 100%),
+  "sand": linear-gradient(180deg, #e5c095 0%, #e5a35c 100%),
+  "green": linear-gradient(180deg, #a1e595 0%, #87d57a 100%),
+  "purple": linear-gradient(180deg, #b895e5 0%, #a27ad5 100%),
+  "sand-text": linear-gradient(-90deg, #e5c095 0%, #e5a35c 100%),
+  "btn-black": linear-gradient(180deg, #2b2b2b 0%, #202020 25%, #b895e5 75%, #a27ad5 100%),
+  "btn-sand": linear-gradient(180deg, #e5c095 0%, #e5a35c 25%, #b895e5 75%, #a27ad5 100%),
+  "btn-purple": linear-gradient(180deg, #b895e5 0%, #a27ad5 25%, #e5c095 75%, #e5a35c 100%),
+);

@@ -1,0 +1,133 @@
+@import "~/assets/styles/variables.scss";
+
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  width: 100%;
+  height: 56px;
+  background: map-get($bg-gradient, "btn-sand");
+  background-position: 0 0;
+  background-size: 400% 400%;
+  transition: 0.25s ease;
+  @media (min-width: 1025px) {
+    &:hover {
+      background-position: 0 100%;
+    }
+  }
+  &:active {
+    background-position: 0 100%;
+  }
+  svg {
+    flex: 0 0 auto;
+    margin-left: 8px;
+    width: 24px;
+    height: 24px;
+    fill: map-get($colors, "white");
+    stroke: map-get($colors, "white");
+  }
+  &.btn-dark {
+    background: map-get($bg-gradient, "btn-black");
+    background-position: 0 0;
+    background-size: 400% 400%;
+    @media (min-width: 1025px) {
+      &:hover {
+        background-position: 0 100%;
+      }
+    }
+    &:active {
+      background-position: 0 100%;
+    }
+  }
+  &.btn-purple {
+    background: map-get($bg-gradient, "btn-purple");
+    background-position: 0 0;
+    background-size: 400% 400%;
+    @media (min-width: 1025px) {
+      &:hover {
+        background-position: 0 100%;
+      }
+    }
+    &:active {
+      background-position: 0 100%;
+    }
+  }
+  &.btn--connected {
+    cursor: initial;
+  }
+}
+
+// link
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  line-height: 28px;
+  color: #fff;
+  position: relative;
+  svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+    flex: 0 0 auto;
+    margin-left: 8px;
+    transition: 0.25s ease;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: 2px;
+    background-color: map-get($colors, "purple-100");
+    opacity: 0;
+    transition: 0.25s ease;
+  }
+  &:hover {
+    svg {
+      fill: map-get($colors, "purple-100");
+    }
+    &::before {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+  &.btn-link__lg {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+
+.btn-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: map-get($bg-gradient, "btn-sand");
+  background-position: 0 0;
+  background-size: 400% 400%;
+  transition: 0.25s ease;
+  &:hover {
+    background-position: 0 100%;
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+  svg {
+    width: 10px;
+    height: 10px;
+    transition: 0.25s ease;
+  }
+}

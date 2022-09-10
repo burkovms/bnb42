@@ -1,0 +1,120 @@
+@import "~/assets/styles/variables.scss";
+
+.popup {
+  z-index: 999;
+  background: rgba(16, 16, 16, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+
+  &.popup-calculate {
+    @media (max-width: $media_md) {
+      .popup__close {
+        top: 64px;
+        right: 64px;
+        background: map-get($bg-gradient, "btn-black");
+        background-position: 0 0;
+        background-size: 400% 400%;
+        @media (min-width: 1024px) {
+          &:hover {
+            background-position: 0 100%;
+          }
+        }
+        &:active {
+          background-position: 0 100%;
+        }
+      }
+    }
+    @media (max-width: $media_xs) {
+      .popup {
+        &__wrap {
+          padding: 0 0 32px;
+        }
+        &__close {
+          top: 35px;
+          right: 32px;
+        }
+      }
+    }
+  }
+
+  &__close {
+    flex: 0 0 auto;
+    user-select: none;
+    position: absolute;
+    top: 28px;
+    right: 34px;
+    z-index: 1;
+    @media (max-width: $media_md) {
+      top: 32px;
+      right: 32px;
+    }
+    @media (max-width: $media_md) {
+      right: 24px;
+    }
+  }
+
+  &__wrap {
+    padding: 28px 34px;
+    background: map-get($colors, "black-200");
+    border-radius: 32px;
+    position: relative;
+    width: 100%;
+    max-width: 870px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    height: auto;
+    margin: auto;
+    transition: all 0.25s ease-out;
+    @media (max-width: $media_md) {
+      padding: 32px;
+    }
+    @media (max-width: $media_sm) {
+      padding: 32px 24px;
+    }
+    &-header {
+      flex: 0 0 auto;
+      font-size: 28px;
+      font-weight: 500;
+      line-height: 32px;
+      padding-right: 40px;
+      display: flex;
+      justify-content: space-between;
+
+      &:not(:empty) {
+        margin-bottom: 32px;
+      }
+    }
+    &-title {
+      flex-grow: 1;
+    }
+    &-main {
+      max-height: 100%;
+      flex-grow: 1;
+    }
+  }
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: 0.25s ease-out;
+  .popup__wrap {
+    transform: translateY(0px);
+  }
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  .popup__wrap {
+    transform: translateY(10px);
+  }
+}

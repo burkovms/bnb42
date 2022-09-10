@@ -1,0 +1,284 @@
+@import "~/assets/styles/variables.scss";
+
+$cards: (
+  "padding": (
+    "mobile": (
+      "lr": 32px,
+    ),
+  ),
+);
+
+.card {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  color: map-get($colors, "white");
+  padding-left: 42px;
+  padding-right: 42px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  @media (max-width: $media_xl) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  @media (max-width: $media_lg) {
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 24px;
+  }
+  &--active {
+    background: map-get($bg-gradient, "sand");
+    .card__header,
+    .card__content {
+      &::before {
+        background: map-get($colors, "sand-200");
+      }
+    }
+  }
+  &--сomplete {
+    background: map-get($bg-gradient, "purple");
+    .btn {
+      // display: none !important;
+    }
+    .card__header,
+    .card__content {
+      &::before {
+        background: map-get($colors, "purple-200");
+      }
+    }
+  }
+  &--empty {
+    padding: 0;
+    background: map-get($bg-gradient, "black");
+  }
+  &--open {
+    background: map-get($colors, "black-200");
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    height: 100%;
+  }
+
+  &__header,
+  &__content {
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      left: -32px;
+      right: -32px;
+      bottom: 0;
+      height: 1px;
+      @media (max-width: $media_lg) {
+        left: -24px;
+        right: -24px;
+      }
+    }
+  }
+
+  &__header {
+    padding-top: map-get($cards, "padding", "mobile", "lr");
+    min-height: 90px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  &__content {
+    padding-top: 15px;
+    padding-bottom: 22px;
+    flex-grow: 1;
+  }
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 16px;
+    padding-bottom: 44px;
+    min-height: 162px;
+    @media (max-width: $media_lg) {
+      min-height: 150px;
+      padding-bottom: 32px;
+    }
+    @media (max-width: $media_sm) {
+      min-height: 120px;
+    }
+    .card-list {
+      font-weight: 700;
+      &__data {
+        font-weight: 700;
+      }
+    }
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  &__sub-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 37px;
+  }
+  &__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    word-break: break-word;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 37px;
+    height: 456px;
+    color: map-get($colors, "card", "empty", "textColor1");
+    background: url("~/assets/svg/card-empty.svg") no-repeat center center / cover;
+    &-color {
+      color: map-get($colors, "card", "empty", "textColor2");
+    }
+  }
+  &__open {
+    .card__content {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      &::before {
+        left: 0;
+        right: 0;
+        background: map-get($colors, "black-400");
+      }
+    }
+    .card__footer {
+      padding-top: 16px;
+      padding-bottom: 36px;
+
+      .card-list {
+        font-weight: 400;
+        &__data {
+          font-weight: 500;
+        }
+        * + .card-list__item {
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  * + &__sub-title {
+    margin-top: 10px;
+  }
+  * + &__calculate {
+    margin-top: 24px;
+  }
+  * + &__button {
+    margin-top: 18px;
+  }
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 28px;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-wrapper {
+    margin-bottom: -40px;
+    @media (max-width: $media_sm) {
+      margin-bottom: -16px;
+    }
+    &__col {
+      flex: 0 0 33.333%;
+      max-width: 33.333%;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 40px;
+      @media (max-width: $media_lg) {
+        padding-left: 4px;
+        padding-right: 4px;
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+      @media (max-width: $media_sm) {
+        flex: 0 0 100%;
+        max-width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+    &__item {
+      height: 100%;
+    }
+  }
+  &__data {
+    display: inline-flex;
+    font-weight: 500;
+    align-items: center;
+  }
+  &__logo {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    background-color: map-get($colors, "black-300");
+    border-radius: 50%;
+    svg {
+      position: absolute;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      width: 9px;
+      height: 9px;
+      fill: map-get($colors, "bnb");
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
+  * + &__item {
+    margin-top: 14px;
+  }
+  * + &__logo {
+    margin-left: 6px;
+  }
+}
+
+.invest-action {
+  &--mod1 {
+    .invest-action__input {
+      color: map-get($colors, "white");
+      border-color: map-get($colors, "black-600");
+      background: map-get($bg-gradient, "black");
+    }
+  }
+  &__element {
+    position: relative;
+    height: 56px;
+  }
+  &__input {
+    width: 100%;
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 66px;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    outline: none;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 8px;
+
+    &-сoin {
+      position: absolute;
+      top: calc(50% + 1px);
+      right: 24px;
+      transform: translateY(-50%);
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 1;
+    }
+  }
+
+  * + &__element {
+    margin-top: 16px;
+  }
+}

@@ -1,0 +1,8 @@
+@import "~/assets/styles/variables.scss";
+
+.investments {
+  margin-top: 62px;
+  @media (max-width: $media_lg) {
+    margin-top: 0;
+  }
+}

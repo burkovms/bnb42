@@ -1,0 +1,309 @@
+@import "~/assets/styles/variables.scss";
+
+.referal-rewards {
+  margin-top: 62px;
+  position: relative;
+
+  .container {
+    position: relative;
+    + .container {
+      margin-top: 32px;
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    max-width: 26%;
+    height: auto;
+    @media (max-width: $media_lg) {
+      display: none;
+    }
+  }
+
+  &__referal-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $media_sm) {
+      flex-direction: column;
+    }
+    .btn {
+      width: 132px;
+      flex: 0 0 auto;
+      @media (max-width: $media_sm) {
+        width: 100%;
+        margin-top: 25px;
+      }
+      * + & {
+        margin-left: 16px;
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  &__referal-list {
+    * + & {
+      margin-top: 16px;
+    }
+  }
+
+  &__wrapper {
+    min-width: 890px;
+    width: 66.666%;
+    position: relative;
+    z-index: 1;
+    @media (max-width: $media_xl) {
+      min-width: 850px;
+    }
+    @media (max-width: $media_lg) {
+      min-width: auto;
+      width: 100%;
+    }
+  }
+
+  &__bottom {
+    padding: 22px 50px;
+    border-radius: 32px;
+    background: map-get($colors, "black-200");
+    @media (max-width: $media_xl) {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    @media (max-width: $media_lg) {
+      padding-left: 24px;
+      padding-right: 24px;
+      border-radius: 24px;
+    }
+    * + & {
+      margin-top: 16px;
+    }
+  }
+
+  &__bottom-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $media_sm) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    + * {
+      margin-top: 16px;
+      @media (max-width: $media_sm) {
+        margin-top: 32px;
+      }
+    }
+    .name {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 1.25;
+      line-height: 28px;
+      @media (max-width: $media_lg) {
+        font-size: 20px;
+      }
+      @media (max-width: $media_sm) {
+        margin-right: 12px;
+      }
+    }
+  }
+
+  &__bottom-item-left {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $media_xs) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__bottom-item-right {
+    flex: 0 0 auto;
+    margin-left: 32px;
+    @media (max-width: $media_sm) {
+      margin-left: 0;
+      margin-top: 25px;
+      width: 100%;
+    }
+    .btn {
+      width: 152px;
+      @media (max-width: $media_sm) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__bottom-item-text {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .text-gradient {
+      @media (max-width: $media_lg) {
+        line-height: 28px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.referal-link {
+  padding: 22px 50px;
+  border-radius: 32px;
+  background: map-get($colors, "black-200");
+  @media (max-width: $media_xl) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: $media_lg) {
+    padding-left: 24px;
+    padding-right: 24px;
+    border-radius: 24px;
+  }
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: $media_sm) {
+      justify-content: flex-start;
+      width: 100%;
+    }
+  }
+  &__title,
+  &__address {
+    display: inline-flex;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.25;
+    flex: 0 0 auto;
+    @media (max-width: $media_lg) {
+      font-size: 20px;
+    }
+  }
+
+  &__address {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: map-get($colors, "white-400");
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    &.copyred {
+      background-color: #878787;
+    }
+    @media (max-width: $media_lg) {
+      font-size: 16px;
+    }
+    * + & {
+      margin-left: 16px;
+    }
+    &-long {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @media (max-width: $media_sm) {
+        display: none;
+      }
+    }
+    &-short {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: none;
+      @media (max-width: $media_sm) {
+        display: block;
+      }
+    }
+  }
+  * + &__address {
+    margin-left: 27px;
+    @media (max-width: $media_sm) {
+      margin-left: 12px;
+    }
+  }
+}
+
+.referal-list {
+  padding: 32px 50px;
+  border-radius: 32px;
+  color: map-get($colors, "white");
+  background: #151515;
+  @media (max-width: $media_xl) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @media (max-width: $media_lg) {
+    padding: 22px 24px;
+    border-radius: 24px;
+  }
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @media (max-width: $media_xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    &:not(:first-child) {
+      margin-top: 19px;
+      @media (max-width: $media_xs) {
+        padding-top: 19px;
+        border-top: 1px solid rgba(229, 192, 149, 0.2);
+      }
+    }
+  }
+  &__total {
+    margin-top: 32px;
+    padding-top: 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(229, 192, 149, 0.2);
+    @media (max-width: $media_lg) {
+      margin-top: 21px;
+      padding-top: 21px;
+    }
+    @media (max-width: $media_xs) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .name {
+      font-weight: 500;
+      font-size: 28px;
+      @media (max-width: $media_lg) {
+        font-size: 24px;
+      }
+      @media (max-width: $media_xs) {
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    line-height: 1.25;
+    font-weight: 400;
+    @media (max-width: $media_lg) {
+      font-size: 16px;
+    }
+    @media (max-width: $media_xs) {
+      + * {
+        margin-top: 12px;
+      }
+    }
+    .text-gradient {
+      font-size: inherit;
+    }
+  }
+}

@@ -1,0 +1,4 @@
+export enum FaqMutationsEnum {
+  SET_FAQ_LIST_DATA = 'SET_FAQ_LIST_DATA',
+  TOOGLE_FAQ_ITEM_VISIBLE = 'TOOGLE_FAQ_ITEM_VISIBLE',
+}

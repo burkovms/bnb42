@@ -1,0 +1,113 @@
+@import "~/assets/styles/variables.scss";
+
+.faq {
+  margin-top: 62px;
+  &__wrapper {
+    position: relative;
+    background: url("~/assets/svg/faq-bg.svg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: auto 294px;
+    @media (max-width: $media_sm) {
+      background: none;
+    }
+  }
+
+  &__item {
+    padding: 32px 0;
+    border-top: 1px solid #151515;
+    border-bottom: 1px solid #151515;
+  }
+
+  &__item-question {
+    display: inline-flex;
+    align-items: flex-start;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.25s ease;
+    h6 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 32px;
+      @media (max-width: $media_lg) {
+        font-size: 18px;
+      }
+    }
+    @media (min-width: 1025px) {
+      &:hover {
+        &:not(.active) {
+          color: map-get($colors, "purple-100");
+        }
+        .faq__item-icon-arrow {
+          svg {
+            fill: map-get($colors, "purple-100");
+          }
+        }
+      }
+    }
+  }
+
+  &__item-icons {
+    flex: 0 0 auto;
+    margin-left: 16px;
+    overflow: hidden;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__item-icon-arrow {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+      fill: #fff;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      transition: 0.25s ease;
+      transform: rotate(90deg);
+    }
+  }
+
+  &__item-content {
+    font-size: 18px;
+    line-height: 1.615;
+    color: #ffffff;
+    opacity: 0.85;
+    @media (max-width: $media_lg) {
+      font-size: 16px;
+    }
+    div {
+      margin-top: 22px;
+    }
+  }
+}
+
+.more-questions {
+  text-align: center;
+  margin-top: 32px;
+  @media (max-width: $media_lg) {
+    display: none;
+  }
+  .btn-link {
+    line-height: 30px;
+    svg {
+      width: 19px;
+      height: 19px;
+    }
+  }
+}
+
+.expand-enter-active,
+.expand-leave-active {
+  transition: height 0.25s ease-out;
+  overflow: hidden;
+}
+
+.expand-enter,
+.expand-leave-to {
+  height: 0;
+}

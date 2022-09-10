@@ -1,0 +1,32 @@
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  @media (min-width: 576px) {
+    padding-right: 64px;
+    padding-left: 64px;
+  }
+  @media (min-width: 1281px) {
+    padding-right: 80px;
+    padding-left: 80px;
+  }
+  @media (min-width: 1441px) {
+    padding-right: 128px;
+    padding-left: 128px;
+  }
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -20px;
+  margin-left: -20px;
+  @media (max-width: $media_lg) {
+    margin-right: -4px;
+    margin-left: -4px;
+  }
+}
