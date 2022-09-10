@@ -205,12 +205,12 @@ export default defineComponent({
                 </template>
                 <ul class="socials">
                   <li>
-                    <a href="https://twitter.com/bnb42i" target="_blank">
+                    <a href="#" target="_blank">
                       <SvgIcon name="twitter" class="icon--twitter" />
                     </a>
                   </li>
                   <li>
-                    <a href="https://t.me/bnb42invest" target="_blank">
+                    <a href="#" target="_blank">
                       <SvgIcon name="telegram" class="icon--telegram" />
                     </a>
                   </li>
