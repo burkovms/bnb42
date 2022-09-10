@@ -140,11 +140,7 @@ export default defineComponent({
           <div class="main-content">
             <div class="main-content__item">
               <div class="main-content__item-link">
-                <a
-                  target="_blank"
-                  :href="marketAddress"
-                  class="btn-link btn-link__lg"
-                >
+                <a target="_blank" href="#" class="btn-link btn-link__lg">
                   Contract
                   <SvgIcon name="arrow-up" class="icon--arrow-up" />
                 </a>
